@@ -21,6 +21,13 @@ public class Job {
     //  other five fields. The second constructor should also call the first in order to initialize
     //  the 'id' field.
 
+    @Override
+    public String toString() {
+        return  "\nID: " + id +
+                "\nName: " + name +
+                "\nEmployer: " + employer.toString() + "\nLocation: " + location.toString() + "\nPosition Type: " + positionType.toString() + "\nCore Competency: " + coreCompetency.toString() + "\n";
+    }
+
     public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
         this();
         this.name = name;
