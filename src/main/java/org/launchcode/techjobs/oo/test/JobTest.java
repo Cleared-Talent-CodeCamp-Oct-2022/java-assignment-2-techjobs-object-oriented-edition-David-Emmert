@@ -54,11 +54,11 @@ public class JobTest {
                 new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         Job testJob2 = new Job("Product tester", new Employer("ACME"),
                 new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        assertNotEquals(testJob1, testJob2);
+        assertFalse(testJob1.equals(testJob2));
         
     }
     @Test
-    public void testIfEmptyFieldReplaceWithString() {
+    public void testToStringHandlesEmptyField() {
         Job testJob1 = new Job("Product tester", new Employer("ACME"), new Location(""),
                 new PositionType("Quality control"), new CoreCompetency("Persistence"));
         assertEquals("\nID: " + testJob1.getId() + "\nName: Product tester\nEmployer: ACME" +
